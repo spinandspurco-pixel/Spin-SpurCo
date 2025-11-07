@@ -25,6 +25,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', animated = false }) 
         strokeWidth="2"
         style={{
           animation: animated ? 'circleGrow 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)' : 'none',
+          transformOrigin: 'center',
         }}
       />
       
@@ -93,11 +94,11 @@ export const Logo: React.FC<LogoProps> = ({ className = '', animated = false }) 
         
         @keyframes circleGrow {
           from {
-            r: 0;
+            transform: scale(0);
             opacity: 0;
           }
           to {
-            r: 95;
+            transform: scale(1);
             opacity: 1;
           }
         }
